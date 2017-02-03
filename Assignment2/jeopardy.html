@@ -3,12 +3,20 @@
 <meta charset="UTF-8" />
   <title>Jeopardy</title>
   <script type="text/javascript">
-    function showSpecifyQuestion(type){
+    function showSpecifyQuestion(){
+      var type = document.createQuestion.questionType.value;
       switch(type){
-        case 'sa':
+        case "Short-Answer":
         document.createQuestion.style.display="none";
         document.specifyShortAnswer.style.display="block";
         break;
+        case "Multiple-Choice":
+        document.createQuestion.style.display="none";
+        document.specifyMultipleChoice.style.display="block";
+        break;
+        case "True-False":
+        document.createQuestion.style.display="none";
+        document.specifyTrueFalse.style.display="block";
         default:
         break;
       }
@@ -16,6 +24,8 @@
     function showCreateQuestion(){
       document.createQuestion.style.display="block";
       document.specifyShortAnswer.style.display="none";
+      document.specifyMultipleChoice.style.display="none";
+      document.specifyTrueFalse.style.display="none";
     }
   </script>
 </head>
@@ -28,11 +38,12 @@
   <br />
   <b>Question Type:</b>
   <br />
-  <select name="Question Type" onchange="showSpecifyQuestion('sa')">
+  <select name="questionType" id="questionType">
     <option value="Short-Answer">Short Answer</option>
-    <option value="Multipe-Choice">Multiple Choice</option>
-    <option value="true-false">True/False</option>
+    <option value="Multiple-Choice">Multiple Choice</option>
+    <option value="True-False">True/False</option>
   </select>
+  <input type="button" onclick="showSpecifyQuestion()" value="enter" />
 </form>
 
 <form name="specifyShortAnswer">
@@ -47,8 +58,58 @@
   <textarea rows="8" cols="50">
   </textarea>
   <input type="button" onclick="showCreateQuestion()" value="save" />
-
 </form>
-<script type="text/javascript">document.specifyShortAnswer.style.display="none"</script>
+
+<form name="specifyMultipleChoice">
+  <h1>Enter Multiple Choice Question</h1>
+  <br />
+  Question
+  <br />
+  <input type="text" name="Question" />
+  <br />
+  Answer 1
+  <br />
+  <input type="text" name="Answer1" />
+  <br />
+  Answer 2
+  <br />
+  <input type="text" name="Answer2" /><br />
+  Answer 3
+  <br />
+  <input type="text" name="Answer3" /><br />
+  Answer 4
+  <br />
+  <input type="text" name="Answer4" />
+  <br />
+  Correct Answer
+  <br />
+  <select name="solution" id="solution">
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+  <br />
+  <input type="button" onclick="showCreateQuestion()" value="save" />
+</form>
+
+<form name="specifyTrueFalse">
+  <h1>Enter True False Question</h1>
+  <br />
+  Question
+  <br />
+  <input type="text" name="Question" />
+  <br />
+  <input type="radio" name="true" value="true"/>True
+  <input type="radio" name="false" value="false" />False
+  <br />
+  <input type="button" onclick="showCreateQuestion()" value="save" />
+</form>
+
+<script type="text/javascript">
+  document.specifyShortAnswer.style.display="none";
+  document.specifyMultipleChoice.style.display="none";
+  document.specifyTrueFalse.style.display="none";
+</script>
 </body>
 </html>
