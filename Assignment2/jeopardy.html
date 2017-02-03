@@ -27,6 +27,9 @@
       document.specifyMultipleChoice.style.display="none";
       document.specifyTrueFalse.style.display="none";
     }
+    function clearContents(element){
+      element.value='';
+    }
   </script>
 </head>
 <body>
@@ -39,6 +42,7 @@
   <b>Question Type:</b>
   <br />
   <select name="questionType" id="questionType">
+    <option value="Default">--default--</option>
     <option value="Short-Answer">Short Answer</option>
     <option value="Multiple-Choice">Multiple Choice</option>
     <option value="True-False">True/False</option>
@@ -55,8 +59,10 @@
   <br />
   Answer
   <br />
-  <textarea rows="8" cols="50">
+  <textarea name="textarea" id="textarea" rows="8" cols="50">
   </textarea>
+  <br />
+  <input type="button" onclick="clearContents(document.specifyShortAnswer.textarea)" value="clear" />
   <input type="button" onclick="showCreateQuestion()" value="save" />
 </form>
 
@@ -100,8 +106,8 @@
   <br />
   <input type="text" name="Question" />
   <br />
-  <input type="radio" name="true" value="true"/>True
-  <input type="radio" name="false" value="false" />False
+  <input type="radio" name="True-False" value="true"/>True
+  <input type="radio" name="True-False" value="false" />False
   <br />
   <input type="button" onclick="showCreateQuestion()" value="save" />
 </form>
