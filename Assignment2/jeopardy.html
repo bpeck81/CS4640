@@ -1,9 +1,54 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+  <title>Jeopardy</title>
+  <script type="text/javascript">
+    function showSpecifyQuestion(type){
+      switch(type){
+        case 'sa':
+        document.createQuestion.style.display="none";
+        document.specifyShortAnswer.style.display="block";
+        break;
+        default:
+        break;
+      }
+    }
+    function showCreateQuestion(){
+      document.createQuestion.style.display="block";
+      document.specifyShortAnswer.style.display="none";
+    }
+  </script>
+</head>
 <body>
 
-  
+<form name="createQuestion" id="createQuestion">
+  <h1>Choose Question Type</h1>
+  <br />
+  Choose the type of question you would like to create.
+  <br />
+  <b>Question Type:</b>
+  <br />
+  <select name="Question Type" onchange="showSpecifyQuestion('sa')">
+    <option value="Short-Answer">Short Answer</option>
+    <option value="Multipe-Choice">Multiple Choice</option>
+    <option value="true-false">True/False</option>
+  </select>
+</form>
+
+<form name="specifyShortAnswer">
+  <h1>Enter Short Answer Question</h1>
+  <br />
+  Question
+  <br />
+  <input type="text" name="Question" />
+  <br />
+  Answer
+  <br />
+  <textarea rows="8" cols="50">
+  </textarea>
+  <input type="button" onclick="showCreateQuestion()" value="save" />
+
+</form>
+<script type="text/javascript">document.specifyShortAnswer.style.display="none"</script>
 </body>
-</head>
 </html>
