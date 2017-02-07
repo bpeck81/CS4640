@@ -21,12 +21,13 @@
         break;
       }
     }
-    function showCreateQuestion(){
+  /*  function showCreateQuestion(){
       document.createQuestion.style.display="block";
       document.specifyShortAnswer.style.display="none";
       document.specifyMultipleChoice.style.display="none";
       document.specifyTrueFalse.style.display="none";
-    }
+    }*/
+
     function clearContents(element){
       element.value='';
     }
@@ -50,7 +51,7 @@
   <input type="button" onclick="showSpecifyQuestion()" value="enter" />
 </form>
 
-<form name="specifyShortAnswer">
+<form method="post" action="formHandler.php" id="specifyShortAnswer" name="specifyShortAnswer">
   <h1>Enter Short Answer Question</h1>
   <br />
   Question
@@ -63,10 +64,10 @@
   </textarea>
   <br />
   <input type="button" onclick="clearContents(document.specifyShortAnswer.textarea)" value="clear" />
-  <input type="button" onclick="showCreateQuestion()" value="save" />
+  <button type="submit" form="specifyShortAnswer">submit</button>
 </form>
 
-<form name="specifyMultipleChoice">
+<form method="post" action="formHandler.php" id="specifyMultipleChoice" name="specifyMultipleChoice">
   <h1>Enter Multiple Choice Question</h1>
   <br />
   Question
@@ -96,10 +97,10 @@
     <option value="four">4</option>
   </select>
   <br />
-  <input type="button" onclick="showCreateQuestion()" value="save" />
+  <button type="submit" form="specifyMultipleChoice">submit</button>
 </form>
 
-<form name="specifyTrueFalse">
+<form method="post" action="formHandler.php" id="specifyTrueFalse" name="specifyTrueFalse">
   <h1>Enter True False Question</h1>
   <br />
   Question
@@ -109,7 +110,7 @@
   <input type="radio" name="True-False" value="true"/>True
   <input type="radio" name="True-False" value="false" />False
   <br />
-  <input type="button" onclick="showCreateQuestion()" value="save" />
+  <button type="submit" form="specifyTrueFalse">submit</button>
 </form>
 
 <script type="text/javascript">
