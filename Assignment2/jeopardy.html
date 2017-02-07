@@ -7,20 +7,52 @@
       var type = document.createQuestion.questionType.value;
       switch(type){
         case "Short-Answer":
-        document.createQuestion.style.display="none";
-        document.specifyShortAnswer.style.display="block";
+          document.createQuestion.style.display="none";
+          document.specifyShortAnswer.style.display="block";
         break;
         case "Multiple-Choice":
-        document.createQuestion.style.display="none";
-        document.specifyMultipleChoice.style.display="block";
+          document.createQuestion.style.display="none";
+          document.specifyMultipleChoice.style.display="block";
         break;
         case "True-False":
-        document.createQuestion.style.display="none";
-        document.specifyTrueFalse.style.display="block";
+          document.createQuestion.style.display="none";
+          document.specifyTrueFalse.style.display="block";
         default:
         break;
       }
     }
+
+    function submitShortAnswer(){
+      if (document.specifyShortAnswer.Question.value == "" || document.specifyShortAnswer.textarea.value == ""){
+        alert("Please fill out the entire form before submitting.");
+      }
+      else{
+        document.specifyShortAnswer.submit();
+      }
+    }
+
+    function submitMultipleChoice(){
+      if (document.specifyMultipleChoice.Question.value == "" || document.specifyMultipleChoice.Answer1.value == "" ||
+          document.specifyMultipleChoice.Answer2.value == "" || document.specifyMultipleChoice.Answer3.value == "" ||
+          document.specifyMultipleChoice.Answer4.value == "" || document.specifyMultipleChoice.solution.value == ""){
+        alert("Please fill out the entire form before submitting.");
+      }
+      else{
+        document.specifyMultipleChoice.submit();
+      }
+    }
+
+    function submitTrueFalse(){
+      if (document.specifyTrueFalse.Question.value == "" || (document.specifyTrueFalse.trueFalse.value != "true" &&
+          document.specifyTrueFalse.trueFalse.value != "false") ){
+        alert("Please fill out the entire form before submitting.");
+      }
+      else{
+        document.specifyTrueFalse.submit();
+      }
+    }
+
+
   /*  function showCreateQuestion(){
       document.createQuestion.style.display="block";
       document.specifyShortAnswer.style.display="none";
@@ -64,7 +96,7 @@
   </textarea>
   <br />
   <input type="button" onclick="clearContents(document.specifyShortAnswer.textarea)" value="clear" />
-  <button type="submit" form="specifyShortAnswer">submit</button>
+  <input type="button" onclick="submitShortAnswer()" value="submit" />
 </form>
 
 <form method="post" action="formHandler.php" id="specifyMultipleChoice" name="specifyMultipleChoice">
@@ -97,7 +129,7 @@
     <option value="four">4</option>
   </select>
   <br />
-  <button type="submit" form="specifyMultipleChoice">submit</button>
+  <input type="button" onclick="submitMultipleChoice()" value="submit" />
 </form>
 
 <form method="post" action="formHandler.php" id="specifyTrueFalse" name="specifyTrueFalse">
@@ -107,10 +139,10 @@
   <br />
   <input type="text" name="Question" />
   <br />
-  <input type="radio" name="True-False" value="true"/>True
-  <input type="radio" name="True-False" value="false" />False
+  <input type="radio" name="trueFalse" value="true"/>True
+  <input type="radio" name="trueFalse" value="false" />False
   <br />
-  <button type="submit" form="specifyTrueFalse">submit</button>
+  <input type="button" onclick="submitTrueFalse()" value="submit" />
 </form>
 
 <script type="text/javascript">
