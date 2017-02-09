@@ -14,66 +14,50 @@
       <td align="center"><strong>Parameter</strong></td>
       <td align="center"><string>Value</string></td>
     </tr>
-    <tr>
-      <td width="20%">MAILTO</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">FName</td> 
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LName</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">Major</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">OtherMajor</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">EmailAddress</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">Phone</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">WebSiteURL</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelHTML</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJava</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJS</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelServlets</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJSP</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">NewOrUpdate</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">submit</td>
-      <td></td>      
-    </tr>    
+      <script language="PHP">
+      if(!empty($_POST['Question'])){
+        echo "<tr>";
+        echo "<td width='20%'>Question</td>";
+        echo "<td>" . $_POST['Question'] . "</td>";
+        echo "/<tr>";
+      }
+      if(!empty($_POST['textarea'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer</td>";
+        echo "<td>" . $_POST['textarea'] . "</td>";
+        echo "</tr>";
+      }
+      if(!empty($_POST['Answer1'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer1</td>";
+        echo "<td>" . $_POST['Answer1'] . "</td>";
+        echo "</tr>";
+      }
+      if(!empty($_POST['Answer2'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer2</td>";
+        echo "<td>" . $_POST['Answer2'] . "</td>";
+        echo "</tr>";
+      }
+      if(!empty($_POST['Answer3'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer3</td>";
+        echo "<td>" . $_POST['Answer3'] . "</td>";
+        echo "</tr>";
+      }
+      if(!empty($_POST['Answer4'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer4</td>";
+        echo "<td>" . $_POST['Answer4'] . "</td>";
+        echo "</tr>";
+      }     
+      if(!empty($_POST['trueFalse'])){
+        echo "<tr>";
+        echo "<td width='20%'>Answer</td>";
+        echo "<td>" . $_POST['trueFalse'] . "</td>";
+        echo "</tr>";
+      }
+      </script>
   </table>
 
 </body>
