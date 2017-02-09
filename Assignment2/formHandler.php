@@ -19,7 +19,7 @@
         echo "<tr>";
         echo "<td width='20%'>Question</td>";
         echo "<td>" . $_POST['Question'] . "</td>";
-        echo "/<tr>";
+        echo "</tr>";
       }
       if(!empty($_POST['textarea'])){
         echo "<tr>";
