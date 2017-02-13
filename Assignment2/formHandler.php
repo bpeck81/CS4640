@@ -50,7 +50,13 @@
         echo "<td width='20%'>Answer4</td>";
         echo "<td>" . $_POST['Answer4'] . "</td>";
         echo "</tr>";
-      }     
+      }
+      if(!empty($_POST['solution'])){
+        echo "<tr>";
+        echo "<td width='20%'>Solution</td>";
+        echo "<td>" . $_POST['solution'] . "</td>";
+        echo "</tr>";
+      }
       if(!empty($_POST['trueFalse'])){
         echo "<tr>";
         echo "<td width='20%'>Answer</td>";
@@ -61,4 +67,4 @@
   </table>
 
 </body>
-</html> 
+</html>
