@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+
   <title>Jeopardy</title>
   <script type="text/javascript">
     function showSpecifyQuestion(){
@@ -64,9 +65,35 @@
       element.value='';
     }
   </script>
-</head>
-<body>
+  <style>
+    body {
+      background-color: #e3f2f9;
+      align-items: center;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 
+    }
+    h1 {
+      color: gray;
+      text-align: center;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    h2{
+      color: gray;
+      text-align: center;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid gray;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="center">
 <form name="createQuestion" id="createQuestion">
   <h1>Let's Play Jeopardy!!</h1>
   <span style="color:#f00"><b>By Brandon Peck and Laith Hasanian (bjp9pq and lmh2sb)</b></span>
@@ -133,6 +160,9 @@
     <option value="four">4</option>
   </select>
   <br />
+  <input type="button" onclick="clearContents(document.specifyMultipleChoice.Question); clearContents(document.specifyMultipleChoice.Answer1);
+  clearContents(document.specifyMultipleChoice.Answer2); clearContents(document.specifyMultipleChoice.Answer3); clearContents(document.specifyMultipleChoice.Answer4);"
+  value="clear" />
   <input type="button" onclick="submitMultipleChoice()" value="submit" />
 </form>
 
@@ -146,6 +176,7 @@
   <input type="radio" name="trueFalse" value="true"/>True
   <input type="radio" name="trueFalse" value="false" />False
   <br />
+  <input type="button" onclick="clearContents(document.specifyTrueFalse.Question); clearContents(document.specifyTrueFalse.trueFalse);" value="clear" />
   <input type="button" onclick="submitTrueFalse()" value="submit" />
 </form>
 
@@ -154,5 +185,8 @@
   document.specifyMultipleChoice.style.display="none";
   document.specifyTrueFalse.style.display="none";
 </script>
+</div>
+
 </body>
+
 </html>
