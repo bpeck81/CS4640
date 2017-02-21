@@ -8,7 +8,7 @@
     foreach ($_POST as $key => $value) {
       $current .= (string) $key . ":" . (string) $value . "||";
     }
-    file_put_contents("question_data.txt", $current);
+    file_put_contents("data/question_data.txt", $current);
   }
   header( "Location: jeopardy.php" );
  ?>
