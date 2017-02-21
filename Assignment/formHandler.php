@@ -79,8 +79,8 @@
       </script>
   </table>
   </post>
-  <input type="submit" value="Save"/>
   <input type="button" value="Back" onclick="window.history.back()"/>
+  <input type="submit" value="Save"/>
 </center>
 </body>
 </html>
