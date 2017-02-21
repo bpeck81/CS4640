@@ -123,13 +123,13 @@
   <br />
   Answer
   <br />
-  <textarea name="textarea" id="textarea" rows="8" cols="50">
+  <textarea name="textarea" id="textarea" rows="8" cols="50" value="''">
   </textarea>
   <br />
-  <input type="button" onclick="clearContents(document.specifyShortAnswer.textarea)" value="clear" />
+  <input type="button" onclick="clearContents(document.specifyShortAnswer.Question); clearContents(document.specifyShortAnswer.textarea);" value="clear" />
   <input type="button" onclick="submitShortAnswer()" value="submit" />
 </form>
-
+<script type="javascript"> document.specifyShortAnswer.textarea.value=''; </script>
 <form method="post" action="formHandler.php" id="specifyMultipleChoice" name="specifyMultipleChoice">
   <h1>Enter Multiple Choice Question</h1>
   <br />
