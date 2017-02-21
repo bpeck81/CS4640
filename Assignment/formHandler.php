@@ -1,14 +1,12 @@
 <html>
 <head>
-  <title>Simple form handler</title>
+  <title>Display Page</title>
 </head>
 
-<body bgcolor="#EEEEEE">
-  <center><h2>Simple Form Handler</h2></center>
-  <p>
-    The following table lists all parameter names and their values that were submitted from your form.
-  </p>
-
+<body>
+  <center>
+    <h2>Display Page</h2>
+  <p>Is this question data correct?</p>
   <table cellSpacing=1 cellPadding=1 width="75%" border=1 bgColor="lavender">
     <tr bgcolor="#FFFFFF">
       <td align="center"><strong>Parameter</strong></td>
@@ -65,6 +63,26 @@
       }
       </script>
   </table>
-
+  <input type="submit" value="Save" />
+  <input type="button" value="Back" />
+</center>
 </body>
 </html>
+<?php
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $data = array();
+    foreach ($_POST as $key => $value) {
+      $data[$key] = $value;
+    }
+    $current = file_get_contents("question_data.txt");
+    $current .= serialize($data);
+    file_put_contents("question_data.txt", $current);
+    echo "Question Saved";
+  }
+  if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    echo 'called';
+  }
+
+
+ ?>
