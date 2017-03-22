@@ -4,7 +4,7 @@
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $data = array();
     $current = "";
-    $current .= file_get_contents("question_data.txt");
+    $current .= file_get_contents("data/question_data.txt");
     foreach ($_POST as $key => $value) {
       $current .= (string) $key . ":" . (string) $value . "||";
     }
